@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="FacebookAnalyzer.LogViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FacebookAnalyzer"
+             mc:Ignorable="d" 
+             d:DesignHeight="678" d:DesignWidth="1024">
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Left" Background="LightBlue">
+                <DockPanel>
+                    <Grid DockPanel.Dock="Top" Width="160" Height="160">
+                        <Label x:Name="selfLabel" FontSize="20" Content="SELF NAME" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </Grid>
+                    <Label Content="People" DockPanel.Dock="Top" Background="LightCyan"/>
+                    <ScrollViewer Width="160">
+                        <StackPanel x:Name="peoplePanel" Orientation="Vertical" />
+                    </ScrollViewer>
+                </DockPanel>
+            </Grid>
+            <DockPanel DockPanel.Dock="Top">
+                <Grid Height="156" Background="LightCyan">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Character Count:" />
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" x:Name="ownerCharCountLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" x:Name="otherCharCountLabel" Content="data" Foreground="Blue" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Word Count" />
+                    <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" x:Name="ownerWordCountLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" x:Name="otherWordCountLabel" Content="data" Foreground="Blue"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Message Count" />
+                    <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" x:Name="ownerMessageCountLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" x:Name="otherMessageCountLabel" Content="data" Foreground="Blue"/>
+
+
+                    <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Average Word Size:" />
+                    <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" x:Name="ownerAvgWordSizeLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" x:Name="otherAvgWordSizeLabel" Content="data" Foreground="Blue"/>
+
+                    <Label Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Average Message Size" />
+                    <Label Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" x:Name="ownerAvgMessageSizeLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" x:Name="otherAvgMessageSizeLabel" Content="data" Foreground="Blue"/>
+
+                    <Label Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Comma Count" />
+                    <Label Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" x:Name="ownerCommaCountLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="5" Grid.Column="3" HorizontalAlignment="Center" x:Name="otherCommaCountLabel" Content="data" Foreground="Blue"/>
+
+                    
+                    <Label Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Question Count:" />
+                    <Label Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" x:Name="ownerQuestionCountLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" x:Name="otherQuestionCountLabel" Content="data" Foreground="Blue"/>
+
+                    <Label Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Exclamation Count" />
+                    <Label Grid.Row="3" Grid.Column="4" HorizontalAlignment="Center" x:Name="ownerExclamationCountLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="3" Grid.Column="5" HorizontalAlignment="Center" x:Name="otherExclamationCountLabel" Content="data" Foreground="Blue"/>
+
+                    <Label Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Link Count" />
+                    <Label Grid.Row="5" Grid.Column="4" HorizontalAlignment="Center" x:Name="ownerLinkCountLabel" Content="data" Foreground="Green"/>
+                    <Label Grid.Row="5" Grid.Column="5" HorizontalAlignment="Center" x:Name="otherLinkCountLabel" Content="data" Foreground="Blue"/>
+                </Grid>
+            </DockPanel>
+            <UserControl x:Name="timelineControl" />
+        </DockPanel>
+    </Grid>
+</UserControl>
